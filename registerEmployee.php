@@ -1,23 +1,22 @@
 <?php
 require('connectdb.php');
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $sl = $_POST['sl'];
     $ht = $_POST['ht'];
     $cm = $_POST['cm'];
     $gt = $_POST['gt'];
-    
+
     $sql = "INSERT INTO `users` (`num`,`name`, `department`, `gender`) VALUES ($sl, '$ht', '$cm',$gt)";
     $result = executedb($sql);
-    if($result>0){
-        echo "<script>alert('Add successful');</script>";
-        header('location: main.php');
-    }else{
-        echo "<script>alert('Add failed');</script>";
+    if ($result > 0) {
+        echo "<script>alert('Register successful');</script>";
+        header('location: index.php');
+    } else {
+        echo "<script>alert('Register failed');</script>";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,9 +44,9 @@ if(isset($_POST['submit'])){
                 <div class="form-group">
                     <label for="">部署</label>
                     <select class="form-control" id="部署" name="cm">
-                        <option value="helo">学生</option>
-                        <option value="hello">先生</option>
-                        <option value="hllo">エンジニア</option>
+                        <option value="helo">CEO</option>
+                        <option value="hello">CTO</option>
+                        <option value="hllo">HR</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -55,7 +54,11 @@ if(isset($_POST['submit'])){
                     <input type="radio" name="gt" id="男" value="1"> <label for="男">男</label>
                     <input type="radio" name="gt" id="女" value="0"> <label for="女">女</label>
                 </div>
-                <input type="submit" class="btn btn-primary mt-3" name="submit" value="登録">
+                <div class="btn">
+                    <a href="index.php">戻る</a>
+                    <input type="submit" class="btn btn-primary" name="submit" value="登録">
+                </div>
+
             </form>
         </div>
 </body>

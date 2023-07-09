@@ -1,9 +1,8 @@
 <?php
-$host = "localhost"; //địa chỉ mysql server sẽ kết nối đến
-$dbname="mydb"; //tên database sẽ kết nối đến
-$username = "root"; //username để kết nối đến database 
-$password = ""; // mật khẩu để kết nối đến database
-
+$host = "localhost"; 
+$dbname="mydb"; 
+$username = "root"; 
+$password = ""; 
 try{
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
